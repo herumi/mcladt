@@ -58,10 +58,10 @@ System.loadLibrary("gmpxx");
 System.loadLibrary("mcl_bn256");
 ```
 and use `Bn256.*` functions.
-See (JNI for mcl) [https://github.com/herumi/mcl/blob/master/java/java.md].
+See [JNI for mcl](https://github.com/herumi/mcl/blob/master/java/java.md).
 
 `BLSsignature()` in
-(MainActivity.java)[https://github.com/herumi/mcladt/blob/master/src/com/herumi/mcladt/MainActivity.java] is a BLS signature sample.
+[MainActivity.java](src/com/herumi/mcladt/MainActivity.java) is a BLS signature sample.
 
 ## C++ sample
 At first, call once
@@ -72,4 +72,4 @@ System.loadLibrary("ssl");
 System.loadLibrary("gmp");
 System.loadLibrary("gmpxx");
 ```
-`bn256_sample()` in [jni/mcl/mcladt.cpp](https://github.com/herumi/mcladt/blob/master/jni/mcladt.cpp) is a pairing sample.
+`bn256_sample()` in [jni/mcl/mcladt.cpp](jni/mcladt.cpp) is a pairing sample.

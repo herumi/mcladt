@@ -1,8 +1,8 @@
-PASS=djnadt
+PASS=mcladt
 key.keystore:
 	keytool -genkey -v -keystore key.keystore -alias djnadt -keyalg RSA -keysize 1024 -validity 10000 -storepass $(PASS)
 
-bin/MainActivity-unsigned.apk: jni/djnadt.cpp
+bin/MainActivity-unsigned.apk: jni/mcladt.cpp
 	echo make release apk
 	ndk-build
 	ant release

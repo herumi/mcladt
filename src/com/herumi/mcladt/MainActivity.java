@@ -17,6 +17,10 @@ public class MainActivity extends Activity {
 		String s;
 		try {
 			System.loadLibrary("gnustl_shared");
+			System.loadLibrary("crypto");
+			System.loadLibrary("ssl");
+			System.loadLibrary("gmp");
+			System.loadLibrary("gmpxx");
 			System.loadLibrary("mcladt");
 			s = "OK : " + mclTest();
 		} catch (Exception e) {

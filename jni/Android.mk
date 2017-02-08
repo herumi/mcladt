@@ -1,11 +1,11 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-OPENSSL_LINK_STATIC := 1
+#OPENSSL_LINK_STATIC := 1
 include ../openssl-android/Android.mk
 
 include $(CLEAR_VARS)
-OPENSSL_GMP_STATIC := 1
+#GMP_LINK_STATIC := 1
 include ../gmp-android/Android.mk
 
 LOCAL_PATH := jni
@@ -27,5 +27,3 @@ LOCAL_CPPFLAGS += -O3 -DNDEBUG -fexceptions -frtti -fPIC
 LOCAL_LDLIBS := -llog -latomic -Wl,--no-warn-shared-textrel
 LOCAL_SHARED_LIBRARIES := crypto ssl gmpxx gmp
 include $(BUILD_SHARED_LIBRARY)
-
-LOCAL_PREBUILT_STATIC_JAVA_LIBRARIES := ../../../mcl/java/mcl.jar

@@ -13,7 +13,7 @@ extern "C" JNIEXPORT jstring JNICALL Java_com_herumi_mcladt_MainActivity_mclTest
 	std::ostringstream os;
 	{
 		std::string a = cybozu::crypto::Hash::digest(cybozu::crypto::Hash::N_SHA256, "abc", 3);
-		os << "X mcl a[0]=" << (int)a[0];
+		os << "mcl a[0]=" << (int)a[0];
 	}
 
 	mpz_class v("1234567890123");

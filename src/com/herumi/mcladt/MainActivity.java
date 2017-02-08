@@ -5,8 +5,45 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import com.herumi.mcl.*;
 
 public class MainActivity extends Activity {
+
+	public static String BLSsignature()
+	{
+		Bn256.SystemInit();
+
+		String xa = "12723517038133731887338407189719511622662176727675373276651903807414909099441";
+		String xb = "4168783608814932154536427934509895782246573715297911553964171371032945126671";
+		String ya = "13891744915211034074451795021214165905772212241412891944830863846330766296736";
+		String yb = "7937318970632701341203597196594272556916396164729705624521405069090520231616";
+
+		G2 Q = new G2(xa, xb, ya, yb);
+
+		String out = "";
+		Fr s = new Fr();
+		s.setRand(); // secret key
+		out += "secret key " + s + "\n";
+		G2 pub = new G2();
+		Bn256.mul(pub, Q, s); // public key = sQ
+
+		String m = "signature test";
+		G1 H = new G1();
+		H.hashAndMapToG1(m); // H = Hash(m)
+		G1 sign = new G1();
+		Bn256.mul(sign, H, s); // signature of m = s H
+
+		GT e1 = new GT();
+		GT e2 = new GT();
+		Bn256.pairing(e1, pub, H); // e1 = e(s Q, H)
+		Bn256.pairing(e2, Q, sign); // e2 = e(Q, s H);
+		if (e1.equals(e2)) {
+			out += "BLS signature ok";
+		} else {
+			out += "BLS signature ng";
+		}
+		return out;
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +59,11 @@ public class MainActivity extends Activity {
 			System.loadLibrary("gmp");
 			System.loadLibrary("gmpxx");
 			System.loadLibrary("mcladt");
-			s = "OK : " + mclTest();
+			System.loadLibrary("mcl_bn256");
+
+			s = mclTest();
+			s += "\n" + BLSsignature();
+
 		} catch (Exception e) {
 			s = "ERR : " + e;
 		}

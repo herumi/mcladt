@@ -1,6 +1,12 @@
 
 # mcl test for Android
 
+# Test environment
+
+* Nexus 7(2012)
+
+# Download
+
 ```
  mkdir work
  cd work
@@ -12,6 +18,18 @@
  git clone git://github.com/herumi/openssl-android
  git clone git://github.com/herumi/mcladt
 ```
+
+```
+work/
+  /mcl
+  /cybozulib
+  /adt/
+      /gmp-android
+      /openssl-android
+      /mcladt
+
+```
+
 
 # build
 Install Java JDK and [Apache Ant](http://ant.apache.org/).
@@ -28,3 +46,30 @@ ndk-build
 ant debug
 adb install bin/MainActivity-debug.apk
 ```
+
+# Java sample code
+At first, call once
+```
+System.loadLibrary("gnustl_shared");
+System.loadLibrary("crypto");
+System.loadLibrary("ssl");
+System.loadLibrary("gmp");
+System.loadLibrary("gmpxx");
+System.loadLibrary("mcl_bn256");
+```
+and use `Bn256.*` functions.
+See (JNI for mcl) [https://github.com/herumi/mcl/blob/master/java/java.md].
+
+`BLSsignature()` in
+(MainActivity.java)[https://github.com/herumi/mcladt/blob/master/src/com/herumi/mcladt/MainActivity.java] is a BLS signature sample.
+
+## C++ sample
+At first, call once
+```
+System.loadLibrary("gnustl_shared");
+System.loadLibrary("crypto");
+System.loadLibrary("ssl");
+System.loadLibrary("gmp");
+System.loadLibrary("gmpxx");
+```
+`bn256_sample()` in [jni/mcl/mcladt.cpp](https://github.com/herumi/mcladt/blob/master/jni/mcladt.cpp) is a pairing sample.

@@ -1,7 +1,7 @@
 
 # pairing library mcl for Android
 
-This repository is a sample of [mcl](git://github.com/herumi/mcl) for Android.
+This repository is a sample of [mcl](https://github.com/herumi/mcl) for Android.
 
 # Test environment
 

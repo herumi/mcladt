@@ -15,9 +15,7 @@
 
 # build
 Install Java JDK and [Apache Ant](http://ant.apache.org/).
-Set `ANDROID_HOME` and apend `%ANDROID_HOME%\ndk-bundle`, Java and ant to the `PATH` such as
-```
-
+Set `ANDROID_HOME` and apend `%ANDROID_HOME%\ndk-bundle`, Java and ant to the `PATH` as the followings:
 ```
 rem for windows
 set ANDROID_HOME=<android>

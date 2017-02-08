@@ -17,10 +17,8 @@ public class MainActivity extends Activity {
 		String s;
 		try {
 			System.loadLibrary("gnustl_shared");
-			System.loadLibrary("gmp");
-			System.loadLibrary("gmpxx");
 			System.loadLibrary("mcladt");
-			s = "OK : " + mclTest(5);
+			s = "OK : " + mclTest();
 		} catch (Exception e) {
 			s = "ERR : " + e;
 		}
@@ -46,5 +44,5 @@ public class MainActivity extends Activity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
-	public native String mclTest(int x);
+	public native String mclTest();
 }

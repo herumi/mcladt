@@ -8,6 +8,8 @@
  git clone git://github.com/herumi/cybozulib
  md adt
  cd adt
+ git clone git://github.com/herumi/gmp-android
+ git clone git://github.com/herumi/openssl-android
  git clone git://github.com/herumi/mcladt
 ```
 
@@ -16,7 +18,7 @@
 * Linux
 ```
   cd work/adt/mcladt
-  sh ./update.bat
+  sh ./update.sh
 ```
 
 * Windows

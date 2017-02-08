@@ -1,4 +1,4 @@
-PASS=mcladt
+PASS=djnadt
 key.keystore:
 	keytool -genkey -v -keystore key.keystore -alias djnadt -keyalg RSA -keysize 1024 -validity 10000 -storepass $(PASS)
 

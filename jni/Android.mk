@@ -16,5 +16,5 @@ LOCAL_SRC_FILES := mcladt.cpp ../../../mcl/src/fp.cpp ../../../mcl/java/bn256_wr
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../openssl-android/include $(LOCAL_PATH)/../../gmp-android/include $(addsuffix /include,$(addprefix $(LOCAL_PATH)/../../../,mcl cybozulib))
 LOCAL_CPPFLAGS += -O3 -DNDEBUG -fexceptions -frtti -fPIC
 LOCAL_LDLIBS := -llog -latomic -Wl,--no-warn-shared-textrel
-LOCAL_STATIC_LIBRARIES := crypto ssl gmpxx gmp
+LOCAL_SHARED_LIBRARIES := crypto ssl gmpxx gmp
 include $(BUILD_SHARED_LIBRARY)

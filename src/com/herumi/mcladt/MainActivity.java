@@ -9,7 +9,7 @@ import com.herumi.mcl.*;
 
 public class MainActivity extends Activity {
 
-	public static String BLSsignature()
+	public String BLSsignature()
 	{
 		Bn256.SystemInit();
 
@@ -51,18 +51,17 @@ public class MainActivity extends Activity {
 		setContentView(R.layout.activity_main);
 
 		TextView t = (TextView)findViewById(R.id.textView1);
-		String s;
+		String s = "start\n";
 		try {
 			System.loadLibrary("gnustl_shared");
-			System.loadLibrary("crypto");
-			System.loadLibrary("ssl");
 			System.loadLibrary("gmp");
 			System.loadLibrary("gmpxx");
-			System.loadLibrary("mcladt");
-			System.loadLibrary("mcl_bn256");
 
-			s = mclTest();
-			s += "\n" + BLSsignature();
+			System.loadLibrary("mcl_bn256");
+			s += BLSsignature();
+
+			System.loadLibrary("mcladt");
+			s += mclTest();
 
 		} catch (Exception e) {
 			s = "ERR : " + e;

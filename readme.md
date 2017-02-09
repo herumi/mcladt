@@ -53,8 +53,6 @@ adb install bin/MainActivity-debug.apk
 At first, call once
 ```
 System.loadLibrary("gnustl_shared");
-System.loadLibrary("crypto");
-System.loadLibrary("ssl");
 System.loadLibrary("gmp");
 System.loadLibrary("gmpxx");
 System.loadLibrary("mcl_bn256");
@@ -69,9 +67,8 @@ See [JNI for mcl](https://github.com/herumi/mcl/blob/master/java/java.md).
 At first, call once
 ```
 System.loadLibrary("gnustl_shared");
-System.loadLibrary("crypto");
-System.loadLibrary("ssl");
 System.loadLibrary("gmp");
 System.loadLibrary("gmpxx");
+System.loadLibrary("mcladt");
 ```
 `bn256_sample()` in [jni/mcl/mcladt.cpp](jni/mcladt.cpp) is a pairing sample.

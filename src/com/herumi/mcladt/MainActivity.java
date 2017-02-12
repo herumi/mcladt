@@ -35,8 +35,8 @@ public class MainActivity extends Activity {
 
 		GT e1 = new GT();
 		GT e2 = new GT();
-		Bn256.pairing(e1, pub, H); // e1 = e(s Q, H)
-		Bn256.pairing(e2, Q, sign); // e2 = e(Q, s H);
+		Bn256.pairing(e1, H, pub); // e1 = e(H, s Q)
+		Bn256.pairing(e2, sign, Q); // e2 = e(s H, Q);
 		if (e1.equals(e2)) {
 			out += "BLS signature ok";
 		} else {

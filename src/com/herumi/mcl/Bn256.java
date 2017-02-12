@@ -61,8 +61,8 @@ public class Bn256 {
     Bn256JNI.sub__SWIG_1(G1.getCPtr(z), z, G1.getCPtr(x), x, G1.getCPtr(y), y);
   }
 
-  public static void pairing(GT e, G2 Q, G1 P) {
-    Bn256JNI.pairing(GT.getCPtr(e), e, G2.getCPtr(Q), Q, G1.getCPtr(P), P);
+  public static void pairing(GT e, G1 P, G2 Q) {
+    Bn256JNI.pairing(GT.getCPtr(e), e, G1.getCPtr(P), P, G2.getCPtr(Q), Q);
   }
 
   public static void neg(G2 y, G2 x) {

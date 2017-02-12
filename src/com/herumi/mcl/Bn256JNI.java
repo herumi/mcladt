@@ -33,7 +33,7 @@ public class Bn256JNI {
   public final static native void dbl__SWIG_0(long jarg1, G1 jarg1_, long jarg2, G1 jarg2_);
   public final static native void add__SWIG_1(long jarg1, G1 jarg1_, long jarg2, G1 jarg2_, long jarg3, G1 jarg3_);
   public final static native void sub__SWIG_1(long jarg1, G1 jarg1_, long jarg2, G1 jarg2_, long jarg3, G1 jarg3_);
-  public final static native void pairing(long jarg1, GT jarg1_, long jarg2, G2 jarg2_, long jarg3, G1 jarg3_);
+  public final static native void pairing(long jarg1, GT jarg1_, long jarg2, G1 jarg2_, long jarg3, G2 jarg3_);
   public final static native long new_G1__SWIG_0();
   public final static native long new_G1__SWIG_1(long jarg1, G1 jarg1_);
   public final static native long new_G1__SWIG_2(String jarg1, String jarg2);

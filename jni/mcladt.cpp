@@ -19,12 +19,12 @@ std::string bn256_sample()
 	const mpz_class a = 123;
 	const mpz_class b = 456;
 	Fp12 e1, e2;
-	BN::pairing(e1, Q, P);
+	BN::pairing(e1, P, Q);
 	G2 aQ;
 	G1 bP;
 	G2::mul(aQ, Q, a);
 	G1::mul(bP, P, b);
-	BN::pairing(e2, aQ, bP);
+	BN::pairing(e2, bP, aQ);
 	Fp12::pow(e1, e1, a * b);
 	return e1 == e2 ? "bn256 ok" : "bn256 ng";
 }
